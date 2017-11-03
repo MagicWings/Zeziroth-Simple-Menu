@@ -44,6 +44,7 @@
             this.Toggle_Wanted = new MetroFramework.Controls.MetroToggle();
             this.metroLabel6 = new MetroFramework.Controls.MetroLabel();
             this.Toggle_Godmode = new MetroFramework.Controls.MetroToggle();
+            this.Toggle_GAME_set_God_Mode = new MetroFramework.Controls.MetroToggle();
             this.Label_Alarm = new System.Windows.Forms.Label();
             this.metroListView1 = new MetroFramework.Controls.MetroListView();
             this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -93,7 +94,6 @@
             this.Toggle_NoReload = new MetroFramework.Controls.MetroToggle();
             this.Toggle_InfAmmo = new MetroFramework.Controls.MetroToggle();
             this.metroLabel11 = new MetroFramework.Controls.MetroLabel();
-            this.Toggle_Untouchable = new MetroFramework.Controls.MetroToggle();
             this.metroLabel12 = new MetroFramework.Controls.MetroLabel();
             this.NumericUpDown_Wantedlevel = new System.Windows.Forms.NumericUpDown();
             this.metroTile1 = new MetroFramework.Controls.MetroTile();
@@ -113,6 +113,7 @@
             this.metroLabel17 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel18 = new MetroFramework.Controls.MetroLabel();
             this.metroTrackBar2 = new MetroFramework.Controls.MetroTrackBar();
+            this.metroLabel19 = new MetroFramework.Controls.MetroLabel();
             ((System.ComponentModel.ISupportInitialize)(this.NumericUpDown_Playerlimit)).BeginInit();
             this.metroTabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -135,9 +136,9 @@
             this.metroRadioButton1.FontSize = MetroFramework.MetroCheckBoxSize.Tall;
             this.metroRadioButton1.Location = new System.Drawing.Point(321, 108);
             this.metroRadioButton1.Name = "metroRadioButton1";
-            this.metroRadioButton1.Size = new System.Drawing.Size(77, 25);
+            this.metroRadioButton1.Size = new System.Drawing.Size(66, 25);
             this.metroRadioButton1.TabIndex = 2;
-            this.metroRadioButton1.Text = "SLOW";
+            this.metroRadioButton1.Text = "Slow";
             this.metroRadioButton1.UseSelectable = true;
             this.metroRadioButton1.Visible = false;
             this.metroRadioButton1.CheckedChanged += new System.EventHandler(this.metroRadioButton1_CheckedChanged);
@@ -148,9 +149,9 @@
             this.metroRadioButton2.FontSize = MetroFramework.MetroCheckBoxSize.Tall;
             this.metroRadioButton2.Location = new System.Drawing.Point(406, 108);
             this.metroRadioButton2.Name = "metroRadioButton2";
-            this.metroRadioButton2.Size = new System.Drawing.Size(99, 25);
+            this.metroRadioButton2.Size = new System.Drawing.Size(94, 25);
             this.metroRadioButton2.TabIndex = 3;
-            this.metroRadioButton2.Text = "MEDIUM";
+            this.metroRadioButton2.Text = "Medium";
             this.metroRadioButton2.UseSelectable = true;
             this.metroRadioButton2.Visible = false;
             this.metroRadioButton2.CheckedChanged += new System.EventHandler(this.metroRadioButton2_CheckedChanged);
@@ -161,9 +162,9 @@
             this.metroRadioButton3.FontSize = MetroFramework.MetroCheckBoxSize.Tall;
             this.metroRadioButton3.Location = new System.Drawing.Point(511, 108);
             this.metroRadioButton3.Name = "metroRadioButton3";
-            this.metroRadioButton3.Size = new System.Drawing.Size(68, 25);
+            this.metroRadioButton3.Size = new System.Drawing.Size(59, 25);
             this.metroRadioButton3.TabIndex = 4;
-            this.metroRadioButton3.Text = "FAST";
+            this.metroRadioButton3.Text = "Fast";
             this.metroRadioButton3.UseSelectable = true;
             this.metroRadioButton3.Visible = false;
             this.metroRadioButton3.CheckedChanged += new System.EventHandler(this.metroRadioButton3_CheckedChanged);
@@ -205,7 +206,7 @@
             // 
             this.TrackBar_Label.AutoSize = true;
             this.TrackBar_Label.FontWeight = MetroFramework.MetroLabelWeight.Bold;
-            this.TrackBar_Label.Location = new System.Drawing.Point(312, 278);
+            this.TrackBar_Label.Location = new System.Drawing.Point(453, 391);
             this.TrackBar_Label.Name = "TrackBar_Label";
             this.TrackBar_Label.Size = new System.Drawing.Size(45, 19);
             this.TrackBar_Label.TabIndex = 15;
@@ -219,7 +220,7 @@
             this.Toggle_Alarm.Name = "Toggle_Alarm";
             this.Toggle_Alarm.Size = new System.Drawing.Size(80, 17);
             this.Toggle_Alarm.TabIndex = 16;
-            this.Toggle_Alarm.Text = "Aus";
+            this.Toggle_Alarm.Text = "Off";
             this.Toggle_Alarm.UseSelectable = true;
             this.Toggle_Alarm.CheckedChanged += new System.EventHandler(this.Toggle_Alarm_CheckedChanged);
             // 
@@ -230,8 +231,9 @@
             this.metroLabel3.Name = "metroLabel3";
             this.metroLabel3.Size = new System.Drawing.Size(158, 19);
             this.metroLabel3.TabIndex = 17;
-            this.metroLabel3.Text = "Publicsession alarm";
+            this.metroLabel3.Text = "Public Session Alarm";
             this.metroLabel3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.metroLabel3.Click += new System.EventHandler(this.metroLabel3_Click);
             // 
             // Toggle_RP
             // 
@@ -241,7 +243,7 @@
             this.Toggle_RP.Name = "Toggle_RP";
             this.Toggle_RP.Size = new System.Drawing.Size(80, 17);
             this.Toggle_RP.TabIndex = 18;
-            this.Toggle_RP.Text = "Aus";
+            this.Toggle_RP.Text = "Off";
             this.Toggle_RP.UseSelectable = true;
             this.Toggle_RP.CheckedChanged += new System.EventHandler(this.Toggle_RP_CheckedChanged);
             // 
@@ -262,7 +264,7 @@
             this.metroLabel5.Name = "metroLabel5";
             this.metroLabel5.Size = new System.Drawing.Size(158, 19);
             this.metroLabel5.TabIndex = 17;
-            this.metroLabel5.Text = "No wanted";
+            this.metroLabel5.Text = "Never Wanted";
             this.metroLabel5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // Toggle_Wanted
@@ -273,7 +275,7 @@
             this.Toggle_Wanted.Name = "Toggle_Wanted";
             this.Toggle_Wanted.Size = new System.Drawing.Size(80, 17);
             this.Toggle_Wanted.TabIndex = 19;
-            this.Toggle_Wanted.Text = "Aus";
+            this.Toggle_Wanted.Text = "Off";
             this.Toggle_Wanted.UseSelectable = true;
             this.Toggle_Wanted.CheckedChanged += new System.EventHandler(this.Toggle_Wanted_CheckedChanged);
             // 
@@ -284,7 +286,7 @@
             this.metroLabel6.Name = "metroLabel6";
             this.metroLabel6.Size = new System.Drawing.Size(158, 19);
             this.metroLabel6.TabIndex = 17;
-            this.metroLabel6.Text = "Godmode";
+            this.metroLabel6.Text = "Semi Godmode";
             this.metroLabel6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // Toggle_Godmode
@@ -295,13 +297,22 @@
             this.Toggle_Godmode.Name = "Toggle_Godmode";
             this.Toggle_Godmode.Size = new System.Drawing.Size(80, 17);
             this.Toggle_Godmode.TabIndex = 20;
-            this.Toggle_Godmode.Text = "Aus";
+            this.Toggle_Godmode.Text = "Off";
             this.Toggle_Godmode.UseSelectable = true;
             this.Toggle_Godmode.CheckedChanged += new System.EventHandler(this.Toggle_Godmode_CheckedChanged);
             // 
+            // Toggle_GAME_set_God_Mode
+            // 
+            this.Toggle_GAME_set_God_Mode.Location = new System.Drawing.Point(226, 63);
+            this.Toggle_GAME_set_God_Mode.Name = "Toggle_GAME_set_God_Mode";
+            this.Toggle_GAME_set_God_Mode.Size = new System.Drawing.Size(80, 19);
+            this.Toggle_GAME_set_God_Mode.TabIndex = 30;
+            this.Toggle_GAME_set_God_Mode.Text = "Off";
+            this.Toggle_GAME_set_God_Mode.UseSelectable = true;
+            // 
             // Label_Alarm
             // 
-            this.Label_Alarm.Font = new System.Drawing.Font("Roboto", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Label_Alarm.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Label_Alarm.Location = new System.Drawing.Point(23, 465);
             this.Label_Alarm.Name = "Label_Alarm";
             this.Label_Alarm.Size = new System.Drawing.Size(1062, 23);
@@ -337,7 +348,7 @@
             this.metroLabel7.Name = "metroLabel7";
             this.metroLabel7.Size = new System.Drawing.Size(197, 19);
             this.metroLabel7.TabIndex = 17;
-            this.metroLabel7.Text = "On alarm -> new session";
+            this.metroLabel7.Text = "On Alarm -> New Session";
             this.metroLabel7.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.metroLabel7.Visible = false;
             // 
@@ -348,18 +359,19 @@
             this.Toggle_NewSession.Name = "Toggle_NewSession";
             this.Toggle_NewSession.Size = new System.Drawing.Size(80, 17);
             this.Toggle_NewSession.TabIndex = 16;
-            this.Toggle_NewSession.Text = "Aus";
+            this.Toggle_NewSession.Text = "Off";
             this.Toggle_NewSession.UseSelectable = true;
             this.Toggle_NewSession.Visible = false;
+            this.Toggle_NewSession.CheckedChanged += new System.EventHandler(this.Toggle_NewSession_CheckedChanged);
             // 
             // metroLabel8
             // 
             this.metroLabel8.FontWeight = MetroFramework.MetroLabelWeight.Bold;
             this.metroLabel8.Location = new System.Drawing.Point(311, 178);
             this.metroLabel8.Name = "metroLabel8";
-            this.metroLabel8.Size = new System.Drawing.Size(88, 19);
+            this.metroLabel8.Size = new System.Drawing.Size(99, 19);
             this.metroLabel8.TabIndex = 17;
-            this.metroLabel8.Text = "Playerlimit";
+            this.metroLabel8.Text = "Player Limit";
             this.metroLabel8.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.metroLabel8.Visible = false;
             // 
@@ -466,7 +478,7 @@
             // Label_PlayerUsername
             // 
             this.Label_PlayerUsername.BackColor = System.Drawing.Color.Transparent;
-            this.Label_PlayerUsername.Font = new System.Drawing.Font("Roboto", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Label_PlayerUsername.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Label_PlayerUsername.Location = new System.Drawing.Point(156, 263);
             this.Label_PlayerUsername.Name = "Label_PlayerUsername";
             this.Label_PlayerUsername.Size = new System.Drawing.Size(327, 18);
@@ -476,7 +488,7 @@
             // Label_PlayerIP
             // 
             this.Label_PlayerIP.BackColor = System.Drawing.Color.Transparent;
-            this.Label_PlayerIP.Font = new System.Drawing.Font("Roboto", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Label_PlayerIP.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Label_PlayerIP.Location = new System.Drawing.Point(40, 281);
             this.Label_PlayerIP.Name = "Label_PlayerIP";
             this.Label_PlayerIP.Size = new System.Drawing.Size(197, 18);
@@ -501,10 +513,10 @@
             // 
             this.label7.AutoSize = true;
             this.label7.BackColor = System.Drawing.Color.Transparent;
-            this.label7.Font = new System.Drawing.Font("Roboto", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.Location = new System.Drawing.Point(4, 281);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(30, 18);
+            this.label7.Size = new System.Drawing.Size(33, 18);
             this.label7.TabIndex = 24;
             this.label7.Text = "IP: ";
             // 
@@ -583,10 +595,10 @@
             // 
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Roboto", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(16, 27);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(52, 18);
+            this.label1.Size = new System.Drawing.Size(56, 18);
             this.label1.TabIndex = 18;
             this.label1.Text = "Health";
             // 
@@ -594,10 +606,10 @@
             // 
             this.label8.AutoSize = true;
             this.label8.BackColor = System.Drawing.Color.Transparent;
-            this.label8.Font = new System.Drawing.Font("Roboto", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.Location = new System.Drawing.Point(16, 245);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(56, 18);
+            this.label8.Size = new System.Drawing.Size(61, 18);
             this.label8.TabIndex = 18;
             this.label8.Text = "Gravity";
             // 
@@ -605,10 +617,10 @@
             // 
             this.label5.AutoSize = true;
             this.label5.BackColor = System.Drawing.Color.Transparent;
-            this.label5.Font = new System.Drawing.Font("Roboto", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.Location = new System.Drawing.Point(16, 186);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(63, 18);
+            this.label5.Size = new System.Drawing.Size(70, 18);
             this.label5.TabIndex = 18;
             this.label5.Text = "Traction";
             // 
@@ -616,10 +628,10 @@
             // 
             this.label6.AutoSize = true;
             this.label6.BackColor = System.Drawing.Color.Transparent;
-            this.label6.Font = new System.Drawing.Font("Roboto", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.Location = new System.Drawing.Point(16, 216);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(126, 18);
+            this.label6.Size = new System.Drawing.Size(145, 18);
             this.label6.TabIndex = 18;
             this.label6.Text = "Suspension Force";
             // 
@@ -627,10 +639,10 @@
             // 
             this.label4.AutoSize = true;
             this.label4.BackColor = System.Drawing.Color.Transparent;
-            this.label4.Font = new System.Drawing.Font("Roboto", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(16, 157);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(81, 18);
+            this.label4.Size = new System.Drawing.Size(91, 18);
             this.label4.TabIndex = 18;
             this.label4.Text = "Breakforce";
             // 
@@ -652,10 +664,10 @@
             // 
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.Transparent;
-            this.label3.Font = new System.Drawing.Font("Roboto", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(16, 128);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(92, 18);
+            this.label3.Size = new System.Drawing.Size(101, 18);
             this.label3.TabIndex = 18;
             this.label3.Text = "Acceleration";
             // 
@@ -683,10 +695,10 @@
             // 
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Font = new System.Drawing.Font("Roboto", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(16, 54);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(125, 18);
+            this.label2.Size = new System.Drawing.Size(141, 18);
             this.label2.TabIndex = 18;
             this.label2.Text = "Vehicle Godmode";
             // 
@@ -730,7 +742,7 @@
             this.Toggle_Car_Godmode.Name = "Toggle_Car_Godmode";
             this.Toggle_Car_Godmode.Size = new System.Drawing.Size(80, 17);
             this.Toggle_Car_Godmode.TabIndex = 18;
-            this.Toggle_Car_Godmode.Text = "Aus";
+            this.Toggle_Car_Godmode.Text = "Off";
             this.Toggle_Car_Godmode.UseSelectable = true;
             this.Toggle_Car_Godmode.CheckedChanged += new System.EventHandler(this.Toggle_Car_Godmode_CheckedChanged);
             // 
@@ -839,7 +851,7 @@
             this.Toggle_FastShoot.Name = "Toggle_FastShoot";
             this.Toggle_FastShoot.Size = new System.Drawing.Size(80, 17);
             this.Toggle_FastShoot.TabIndex = 16;
-            this.Toggle_FastShoot.Text = "Aus";
+            this.Toggle_FastShoot.Text = "Off";
             this.Toggle_FastShoot.UseSelectable = true;
             this.Toggle_FastShoot.CheckedChanged += new System.EventHandler(this.Toggle_FastShoot_CheckedChanged);
             // 
@@ -871,7 +883,7 @@
             this.Toggle_NoReload.Name = "Toggle_NoReload";
             this.Toggle_NoReload.Size = new System.Drawing.Size(80, 17);
             this.Toggle_NoReload.TabIndex = 16;
-            this.Toggle_NoReload.Text = "Aus";
+            this.Toggle_NoReload.Text = "Off";
             this.Toggle_NoReload.UseSelectable = true;
             this.Toggle_NoReload.CheckedChanged += new System.EventHandler(this.Toggle_NoReload_CheckedChanged);
             // 
@@ -883,40 +895,26 @@
             this.Toggle_InfAmmo.Name = "Toggle_InfAmmo";
             this.Toggle_InfAmmo.Size = new System.Drawing.Size(80, 17);
             this.Toggle_InfAmmo.TabIndex = 16;
-            this.Toggle_InfAmmo.Text = "Aus";
+            this.Toggle_InfAmmo.Text = "Off";
             this.Toggle_InfAmmo.UseSelectable = true;
             this.Toggle_InfAmmo.CheckedChanged += new System.EventHandler(this.Toggle_InfAmmo_CheckedChanged);
             // 
             // metroLabel11
             // 
-            this.metroLabel11.FontWeight = MetroFramework.MetroLabelWeight.Bold;
-            this.metroLabel11.Location = new System.Drawing.Point(23, 223);
+            this.metroLabel11.Location = new System.Drawing.Point(406, 201);
             this.metroLabel11.Name = "metroLabel11";
-            this.metroLabel11.Size = new System.Drawing.Size(197, 19);
-            this.metroLabel11.TabIndex = 17;
-            this.metroLabel11.Text = "Untouchable";
-            this.metroLabel11.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // Toggle_Untouchable
-            // 
-            this.Toggle_Untouchable.AutoSize = true;
-            this.Toggle_Untouchable.Enabled = false;
-            this.Toggle_Untouchable.Location = new System.Drawing.Point(226, 226);
-            this.Toggle_Untouchable.Name = "Toggle_Untouchable";
-            this.Toggle_Untouchable.Size = new System.Drawing.Size(80, 17);
-            this.Toggle_Untouchable.TabIndex = 16;
-            this.Toggle_Untouchable.Text = "Aus";
-            this.Toggle_Untouchable.UseSelectable = true;
-            this.Toggle_Untouchable.CheckedChanged += new System.EventHandler(this.Toggle_Untouchable_CheckedChanged);
+            this.metroLabel11.Size = new System.Drawing.Size(100, 23);
+            this.metroLabel11.TabIndex = 29;
+            this.metroLabel11.Click += new System.EventHandler(this.metroLabel11_Click);
             // 
             // metroLabel12
             // 
             this.metroLabel12.FontWeight = MetroFramework.MetroLabelWeight.Bold;
             this.metroLabel12.Location = new System.Drawing.Point(312, 133);
             this.metroLabel12.Name = "metroLabel12";
-            this.metroLabel12.Size = new System.Drawing.Size(98, 19);
+            this.metroLabel12.Size = new System.Drawing.Size(105, 19);
             this.metroLabel12.TabIndex = 17;
-            this.metroLabel12.Text = "Wantedlevel";
+            this.metroLabel12.Text = "Wanted Level";
             this.metroLabel12.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // NumericUpDown_Wantedlevel
@@ -951,17 +949,17 @@
             // metroLabel13
             // 
             this.metroLabel13.FontWeight = MetroFramework.MetroLabelWeight.Bold;
-            this.metroLabel13.Location = new System.Drawing.Point(23, 278);
+            this.metroLabel13.Location = new System.Drawing.Point(234, 391);
             this.metroLabel13.Name = "metroLabel13";
-            this.metroLabel13.Size = new System.Drawing.Size(197, 19);
+            this.metroLabel13.Size = new System.Drawing.Size(80, 19);
             this.metroLabel13.TabIndex = 17;
-            this.metroLabel13.Text = "Runspeed";
+            this.metroLabel13.Text = "Run Speed";
             this.metroLabel13.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // metroTrackBar1
             // 
             this.metroTrackBar1.BackColor = System.Drawing.Color.Transparent;
-            this.metroTrackBar1.Location = new System.Drawing.Point(226, 278);
+            this.metroTrackBar1.Location = new System.Drawing.Point(367, 391);
             this.metroTrackBar1.Maximum = 500;
             this.metroTrackBar1.Minimum = 100;
             this.metroTrackBar1.Name = "metroTrackBar1";
@@ -978,8 +976,9 @@
             this.metroLabel2.Name = "metroLabel2";
             this.metroLabel2.Size = new System.Drawing.Size(197, 19);
             this.metroLabel2.TabIndex = 17;
-            this.metroLabel2.Text = "Money drop (ped drop)";
+            this.metroLabel2.Text = "Ped Dropper";
             this.metroLabel2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.metroLabel2.Visible = false;
             // 
             // Toggle_Ped_Drop
             // 
@@ -989,8 +988,9 @@
             this.Toggle_Ped_Drop.Name = "Toggle_Ped_Drop";
             this.Toggle_Ped_Drop.Size = new System.Drawing.Size(80, 17);
             this.Toggle_Ped_Drop.TabIndex = 18;
-            this.Toggle_Ped_Drop.Text = "Aus";
+            this.Toggle_Ped_Drop.Text = "Off";
             this.Toggle_Ped_Drop.UseSelectable = true;
+            this.Toggle_Ped_Drop.Visible = false;
             this.Toggle_Ped_Drop.CheckedChanged += new System.EventHandler(this.Toggle_Ped_Drop_CheckedChanged);
             // 
             // panel3
@@ -1059,9 +1059,9 @@
             this.metroLabel14.FontWeight = MetroFramework.MetroLabelWeight.Bold;
             this.metroLabel14.Location = new System.Drawing.Point(312, 86);
             this.metroLabel14.Name = "metroLabel14";
-            this.metroLabel14.Size = new System.Drawing.Size(89, 19);
+            this.metroLabel14.Size = new System.Drawing.Size(98, 19);
             this.metroLabel14.TabIndex = 17;
-            this.metroLabel14.Text = "$ per drop";
+            this.metroLabel14.Text = "$ Ped Money";
             this.metroLabel14.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.metroLabel14.Visible = false;
             // 
@@ -1072,7 +1072,7 @@
             this.metroLabel15.Name = "metroLabel15";
             this.metroLabel15.Size = new System.Drawing.Size(118, 19);
             this.metroLabel15.TabIndex = 17;
-            this.metroLabel15.Text = "Refill HP every";
+            this.metroLabel15.Text = "Refill HP";
             this.metroLabel15.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.metroLabel15.Visible = false;
             // 
@@ -1086,7 +1086,7 @@
             0,
             0});
             this.Numeric_Refill_HP.Minimum = new decimal(new int[] {
-            5,
+            1,
             0,
             0,
             131072});
@@ -1116,11 +1116,11 @@
             // 
             this.Toggle_AntiAFK.AutoSize = true;
             this.Toggle_AntiAFK.Enabled = false;
-            this.Toggle_AntiAFK.Location = new System.Drawing.Point(226, 249);
+            this.Toggle_AntiAFK.Location = new System.Drawing.Point(490, 319);
             this.Toggle_AntiAFK.Name = "Toggle_AntiAFK";
             this.Toggle_AntiAFK.Size = new System.Drawing.Size(80, 17);
             this.Toggle_AntiAFK.TabIndex = 16;
-            this.Toggle_AntiAFK.Text = "Aus";
+            this.Toggle_AntiAFK.Text = "Off";
             this.Toggle_AntiAFK.UseSelectable = true;
             this.Toggle_AntiAFK.Visible = false;
             this.Toggle_AntiAFK.CheckedChanged += new System.EventHandler(this.Toggle_AntiAFK_CheckedChanged);
@@ -1158,28 +1158,38 @@
             this.metroTrackBar2.Value = 10;
             this.metroTrackBar2.Scroll += new System.Windows.Forms.ScrollEventHandler(this.metroTrackBar2_Scroll);
             // 
+            // metroLabel19
+            // 
+            this.metroLabel19.FontWeight = MetroFramework.MetroLabelWeight.Bold;
+            this.metroLabel19.Location = new System.Drawing.Point(23, 63);
+            this.metroLabel19.Name = "metroLabel19";
+            this.metroLabel19.Size = new System.Drawing.Size(158, 19);
+            this.metroLabel19.TabIndex = 31;
+            this.metroLabel19.Text = "God Mode";
+            this.metroLabel19.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1108, 503);
+            this.Controls.Add(this.metroLabel19);
             this.Controls.Add(this.metroTrackBar2);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.metroTrackBar1);
             this.Controls.Add(this.metroTile1);
-            this.Controls.Add(this.metroLabel17);
             this.Controls.Add(this.metroLabel11);
             this.Controls.Add(this.Toggle_Alarm);
             this.Controls.Add(this.metroTabControl1);
             this.Controls.Add(this.Toggle_NewSession);
             this.Controls.Add(this.Toggle_AntiAFK);
-            this.Controls.Add(this.Toggle_Untouchable);
             this.Controls.Add(this.NumericUpDown_Wantedlevel);
             this.Controls.Add(this.Numeric_PED_Value);
             this.Controls.Add(this.Numeric_Refill_HP);
             this.Controls.Add(this.NumericUpDown_Playerlimit);
             this.Controls.Add(this.Label_Alarm);
             this.Controls.Add(this.Toggle_Godmode);
+            this.Controls.Add(this.Toggle_GAME_set_God_Mode);
             this.Controls.Add(this.Toggle_Wanted);
             this.Controls.Add(this.Toggle_Ped_Drop);
             this.Controls.Add(this.Toggle_RP);
@@ -1204,7 +1214,8 @@
             this.Name = "Form1";
             this.Opacity = 0.7D;
             this.Resizable = false;
-            this.Text = "Zeziroth Simple Menu  v1.10";
+            this.Style = MetroFramework.MetroColorStyle.Red;
+            this.Text = "X1337z Menu  v1.2";
             this.TopMost = true;
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
             this.Load += new System.EventHandler(this.Form1_Load);
@@ -1248,6 +1259,9 @@
         private MetroFramework.Controls.MetroToggle Toggle_Wanted;
         private MetroFramework.Controls.MetroLabel metroLabel6;
         private MetroFramework.Controls.MetroToggle Toggle_Godmode;
+        private MetroFramework.Controls.MetroToggle Toggle_GAME_set_God_Mode;
+        //private MetroFramework.Controls.MetroToggle Toggle_AntiAFK;
+        //private MetroFramework.Controls.MetroToggle Toggle_Godmode2;
         internal System.Windows.Forms.Label Label_Alarm;
         private MetroFramework.Controls.MetroListView metroListView1;
         private System.Windows.Forms.ColumnHeader columnHeader4;
@@ -1265,7 +1279,6 @@
         private MetroFramework.Controls.MetroLabel metroLabel10;
         internal MetroFramework.Controls.MetroToggle Toggle_InfAmmo;
         private MetroFramework.Controls.MetroLabel metroLabel11;
-        internal MetroFramework.Controls.MetroToggle Toggle_Untouchable;
         private MetroFramework.Controls.MetroLabel metroLabel12;
         internal System.Windows.Forms.NumericUpDown NumericUpDown_Wantedlevel;
         private MetroFramework.Controls.MetroTile metroTile1;
@@ -1317,6 +1330,7 @@
         private MetroFramework.Controls.MetroLabel Label_Gravity;
         private MetroFramework.Controls.MetroLabel metroLabel18;
         private MetroFramework.Controls.MetroTrackBar metroTrackBar2;
+        private MetroFramework.Controls.MetroLabel metroLabel19;
     }
 }
 
