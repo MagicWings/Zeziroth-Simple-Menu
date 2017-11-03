@@ -14,7 +14,6 @@ namespace Main
         public static IntPtr PlayerPTR = IntPtr.Zero;
         public static IntPtr WaypointPTR_X = IntPtr.Zero;
         public static IntPtr WaypointPTR_Y = IntPtr.Zero;
-        //public static IntPtr OFFSETS_God_Mode = IntPtr.Zero;
 
         public static void RefreshBase(bool steam)
         {
@@ -32,7 +31,6 @@ namespace Main
                 PlayerPTR = IntPtr.Add(baseAddress, 0x1CE49C0);
                 WaypointPTR_X = IntPtr.Add(baseAddress, 0x1FC0C70);
                 WaypointPTR_Y = IntPtr.Add(baseAddress, 0x1FC0C74);
-                //OFFSETS_God_Mode = IntPtr.Add(baseAddress, 0x189);
             }
             else
             {
@@ -44,12 +42,7 @@ namespace Main
                 PlayerPTR = IntPtr.Add(baseAddress, 0x1CE0AA0);
                 WaypointPTR_X = IntPtr.Add(baseAddress, 0x1FBCAE0);
                 WaypointPTR_Y = IntPtr.Add(baseAddress, 0x1FBCAE4);
-                //OFFSETS_God_Mode = IntPtr.Add(baseAddress, 0x189);
             }
-            int[] OFFSETS_God_Mode = new int[] { 0x08, 0x189 };
-            int[] OFFSETS_God_Mode_Vehicle = new int[] { 0x08, 0xD28, 0x189 };
-            int[] OFFSETS_No_Bike_Fall = new int[] { 0x8, 0x13EC };
-            int[] OFFSETS_Swim_Speed = new int[] { 0x08, 0x10B8, 0x0148 };
             pedListPTR = Base.GetPtr(Base.ReplayeInterfacePTR, new int[] { 0x18 });
             World.Refresh();
             Players.Refresh();

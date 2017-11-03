@@ -214,7 +214,7 @@ namespace Main
         }
 
         // God Mode.
-        public byte[] GAME_get_God_Mode()
+        /*public byte[] GAME_get_God_Mode()
         {
             IntPtr localPlayer = Base.GetPtr(Base.WorldPTR, new int[] { 0x8 });
             IntPtr OFFSETS_God_Mode = Base.GetPtr(Base.WorldPTR, new int[] { 0x8, 0x189 });
@@ -242,7 +242,7 @@ namespace Main
         public void GAME_set_God_Mode_Stop()
         {
             GAME_set_God_Mode(false);
-        }
+        }*/
 
         public void NoPolice()
         {

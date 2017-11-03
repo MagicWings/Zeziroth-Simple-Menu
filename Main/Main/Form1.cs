@@ -314,7 +314,7 @@ namespace Main
             Numeric_Refill_HP.Visible = Toggle_Godmode.Checked;
         }
 
-        private void Toggle_GAME_set_God_Mode_CheckedChanged(object sender, EventArgs e)
+        /*private void Toggle_GAME_set_God_Mode_CheckedChanged(object sender, EventArgs e)
         {
             if (Toggle_GAME_set_God_Mode.Checked)
             {
@@ -324,7 +324,7 @@ namespace Main
             {
                 Core.RunThread(Memory.api.GAME_set_God_Mode_Stop);
             }
-        }
+        }*/
 
         private void Toggle_InfAmmo_CheckedChanged(object sender, EventArgs e)
         {

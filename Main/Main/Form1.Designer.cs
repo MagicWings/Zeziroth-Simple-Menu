@@ -309,6 +309,7 @@
             this.Toggle_GAME_set_God_Mode.TabIndex = 30;
             this.Toggle_GAME_set_God_Mode.Text = "Off";
             this.Toggle_GAME_set_God_Mode.UseSelectable = true;
+            this.Toggle_GAME_set_God_Mode.Visible = false;
             // 
             // Label_Alarm
             // 
@@ -1167,6 +1168,7 @@
             this.metroLabel19.TabIndex = 31;
             this.metroLabel19.Text = "God Mode";
             this.metroLabel19.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.metroLabel19.Visible = false;
             // 
             // Form1
             // 
